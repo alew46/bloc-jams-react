@@ -12,7 +12,8 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      numColContent: ""
     };
 
     this.audioElement = document.createElement('audio');
@@ -34,17 +35,34 @@ class Album extends Component {
     this.setState( {currentSong: song} );
   };
 
-  handleSongClick(song) {
+
+  handleSongClick(song, index) {
     var isSameSong = this.state.currentSong === song;
 
     if (this.state.isPlaying && isSameSong) {
       this.pause();
+      this.setState( {numColContent:""} )
     } else {
       if (!isSameSong) {
         this.setSong(song);
       }
       this.play();
+      this.setState( {numColContent:<span className="ion-pause"></span>} )
     }
+  };
+
+
+  handleSongHoverOn(song) {
+    var isSameSong = this.state.currentSong === song;
+
+    if (!isSameSong) {
+      this.setState( {numColContent:<span className="ion-play"></span>} )
+    }
+
+  };
+
+  handleSongHoverOff(song) {
+    this.setState( {numColContent:""} )
   };
 
 
@@ -66,8 +84,8 @@ class Album extends Component {
           <tbody>
             {
               this.state.album.songs.map( (song, index) =>
-                <tr className="song" key={index} onClick={ () => this.handleSongClick(song) }>
-                  <td>{index + 1}</td>
+                <tr className="song" key={index} onClick={ () => this.handleSongClick(song) } onMouseEnter={ () => this.handleSongHoverOn(song) }  onMouseLeave={ () => this.handleSongHoverOff(song) }>
+                  <td id="song-number-td">{this.state.numColContent}</td>
                   <td>{song.title}</td>
                   <td>{song.duration}</td>
                 </tr>
