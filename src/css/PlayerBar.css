@@ -1,0 +1,203 @@
+.player-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #323232;
+  padding: 15px 0px 15px 2px;
+  height: 50px;
+  color: #DFDCDB;
+}
+
+
+#volume-control {
+  width: 30%;
+  float: right;
+  margin-right: 100px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#volume-control .ion-volume-low {
+  float: left;
+  margin-right: 10px;
+}
+
+#volume-control .ion-volume-high {
+  float: left;
+  margin-left: 10px;
+}
+
+#volume-control .seek-bar {
+  float: left;
+  width: 100px;
+}
+
+#time-control {
+  float: left;
+  margin-left: 60px;
+  padding-top: 10px;
+}
+
+#time-control .current-time {
+  float: left;
+  margin-right: 10px;
+  width: 40px;
+}
+
+#time-control .total-time {
+  float: left;
+  width: 40px;
+}
+
+#time-control .seek-bar {
+  float: left;
+  width: 200px;
+  margin-right: 10px;
+}
+
+#player-buttons {
+  float: left;
+  margin-left: 8%;
+  margin-bottom: 20px;
+}
+
+#play-pause {
+  border: 1px solid #DFDCDB;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #DFDCDB;
+  font-size: 20px;
+  margin: 0px 15px 0px 15px;
+  padding: 10px 14px;
+  width: 45px;
+  outline: none;
+}
+
+#play-pause:hover {
+  border: 1px solid #648880;
+  color: #648880;
+}
+
+#previous {
+  border: 1px solid #DFDCDB;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #DFDCDB;
+  font-size: 20px;
+  margin: 0px 15px 0px 15px;
+  padding: 10px 14px;
+  width: 45px;
+  outline: none;
+}
+
+#previous:hover {
+  border: 1px solid #648880;
+  color: #648880;
+}
+
+#next {
+  border: 1px solid #DFDCDB;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #DFDCDB;
+  font-size: 20px;
+  margin: 0px 15px 0px 15px;
+  padding: 10px 14px;
+  width: 45px;
+  outline: none;
+}
+
+#next:hover {
+  border: 1px solid #648880;
+  color: #648880;
+}
+
+
+/* Range Bar Styling */
+
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+
+    /*required for proper track sizing in FF*/
+    width: 300px;
+    margin-top: 10px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 3px;
+    background: #DFDCDB;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #648880;
+    margin-top: -6px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #DFDCDB;
+}
+
+input[type=range]::-moz-range-track {
+    width: 300px;
+    height: 3px;
+    background: #DFDCDB;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #648880;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+    width: 300px;
+    height: 3px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #DFDCDB;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #DFDCDB;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #648880;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #DFDCDB;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #DFDCDB;
+}

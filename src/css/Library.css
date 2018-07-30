@@ -1,0 +1,53 @@
+.Library {
+  margin-left: 220px;
+  padding: 0px 60px 0px 60px;
+}
+
+.album-wrapper {
+  display: block;
+  float: left;
+  padding: 0px 20px;
+}
+
+.album-wrapper a {
+  color: #DFDCDB;
+  text-decoration: none;
+}
+
+.album-title {
+  font-weight: 600;
+}
+
+.album-cover {
+  width: 200px;
+}
+
+.cover-container {
+  position: relative;
+}
+
+.cover-overlay {
+  position: absolute;
+  padding: 40px;
+}
+
+.cover-container .cover-overlay {
+  background: black;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 32% 0% 30% 0%;
+  transition: opacity .5s;
+}
+
+.cover-container:hover .cover-overlay {
+  opacity: .5;
+  transition: opacity .2s;
+}
+
+.overlay-span {
+  font-size: 50px;
+}

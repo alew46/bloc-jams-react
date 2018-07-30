@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums.js';
 import PlayerBar from './PlayerBar.js';
+import '../css/Album.css'
 
 class Album extends Component {
   constructor(props){
@@ -42,7 +43,6 @@ class Album extends Component {
 
     componentWillUnmount() {
       this.audioElement.src = null;
-      this.audioElement = null;
       this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
       this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
     };
@@ -122,7 +122,7 @@ class Album extends Component {
     } else {
       var minutes = Math.floor(time / 60);
       var seconds = Math.floor(time % 60);
-      seconds < 10 ? seconds = '0' + seconds : seconds;
+      (seconds < 10) ? seconds = '0' + seconds : seconds;
       return minutes + ":" + seconds
     }
   };
@@ -132,10 +132,12 @@ class Album extends Component {
     return (
       <section className="album">
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
-          <h1 id="album-title">{this.state.album.title}</h1>
-          <h2 className="artist">{this.state.album.artist}</h2>
-          <div id="release-info">{this.state.album.releaseInfo}</div>
+          <div className="album-info-wrapper">
+            <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
+            <h1 id="album-title">{this.state.album.title}</h1>
+            <h2 className="artist">{this.state.album.artist}</h2>
+            <div id="release-info">{this.state.album.releaseInfo}</div>
+          </div>
         </section>
 
 
@@ -157,8 +159,8 @@ class Album extends Component {
                         <span className="ion-play"></span> : index+1 }
 
                   </td>
-                  <td>{song.title}</td>
-                  <td>{this.formatTime(song.duration)}</td>
+                  <td id="song-title-td">{song.title}</td>
+                  <td id="song-duration-td">{this.formatTime(song.duration)}</td>
                 </tr>
               )
             }
