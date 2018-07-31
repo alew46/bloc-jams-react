@@ -15,8 +15,8 @@ class Library extends Component {
       <h1 className="hero-title">Albums</h1>
         {
           this.state.albums.map( (album, index) =>
-            <div className="album-wrapper">
-              <Link to={`/album/${album.slug}`} key={index}>
+            <div className="album-wrapper" key={index}>
+              <Link to={`/album/${album.slug}`}>
                 <div className="cover-container">
                   <img src={album.albumCover} alt={album.title} className="album-cover" />
                   <div className="cover-overlay"><span className="overlay-span ion-ios-play"></span></div>
